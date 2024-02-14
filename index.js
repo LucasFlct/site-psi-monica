@@ -10,11 +10,12 @@ app.set("view engine", "ejs")
 //pasta raiz de onde os arquivos estáticos devem se basear
 app.use(express.static(path.join(__dirname, 'public')))
 
+//receber dados do front-end
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 //rotas do site
 app.use("/", site)
-
-//receber dados como formulário
-app.use(express.urlencoded())
 
 //servidor rodando
 app.listen(PORT, ()=>{
