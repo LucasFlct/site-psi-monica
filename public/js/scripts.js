@@ -19,7 +19,6 @@ if(elementos.length){
 	})
 	window.addEventListener('scroll',function(){
 		animaScroll()
-		// history.replaceState(null, null, ' ');
 
 	})
 }
@@ -59,7 +58,36 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		
 	}
 
+	//NAVBAR 
+	const navbar = document.querySelector('.navbar')
+	if(document.body.offsetTop < 50) {
+		navbar.classList.add('reduzir');
+	}
 
+
+	window.addEventListener('scroll',function(){
+		console.log(window.scrollY)
+		if(window.scrollY > 50){
+			navbar.classList.add('reduzir');
+		} else {
+			navbar.classList.remove('reduzir');
+		}
+	});
+	
+	//NAVBAR MOBILE
+	const btnNavbarToggle = document.querySelector('#navbar-toggler')
+
+	btnNavbarToggle.addEventListener('click', function(){
+		
+		if(btnNavbarToggle.classList.contains('collapsed')){
+			navbar.classList.remove('show')
+		} else {
+			navbar.classList.add('show')
+		}
+		
+
+	})
+	
 	
 	//BOTÃO BEM-VINDO
 	if(url == "inicio"){
@@ -67,7 +95,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		
 		bemVindo.addEventListener("click", (event)=>{
 			event.preventDefault()
-			window.scrollTo(0, document.getElementById('section1').offsetTop)
+			window.scrollTo(0, (document.getElementById('section1').offsetTop - 70))
 		})
 	}
 
@@ -79,7 +107,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 		
 		minhaHistoria.addEventListener("click", (event)=>{
 			event.preventDefault()
-			window.scrollTo(0, document.getElementById('minhaHistoria').offsetTop)
+			window.scrollTo(0, (document.getElementById('minhaHistoria').offsetTop - 70))
 		})
 	}
 

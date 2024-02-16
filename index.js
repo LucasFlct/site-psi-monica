@@ -1,4 +1,4 @@
-const PORT = 5555
+const PORT = 3000
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -19,5 +19,5 @@ app.use("/", site)
 
 //servidor rodando
 app.listen(PORT, ()=>{
-    console.log("Server Running on Port: ", PORT)
+    console.log("Server Running on Port:", PORT)
 })

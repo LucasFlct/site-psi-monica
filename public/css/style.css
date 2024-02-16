@@ -1,3 +1,4 @@
+
 *{
   box-sizing: border-box;
 }
@@ -25,6 +26,59 @@ p, h4, button, span{
   color: #a3720f;
 }
 
+.navbar {
+
+    z-index:3;
+    top: 0;
+    height: 100px;
+    width: 100vw;
+    /* background-color: rgba(0, 255, 0, 0.5); */
+    display: table;
+    table-layout: fixed;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    position: fixed;
+    /* font-size: 0.5rem; */
+  }
+  
+  .reduzir {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    visibility: visible;
+    height: 40px !important;
+    /* transform: scale(.8); */
+    font-size: .90rem;
+    margin:auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .reduzir img{
+    width: 4.5rem;
+    padding-left: 30%;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+
+  .navbar img{
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+  }
+
+  .show{
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  nav .show, 
+  nav .collapsing{
+    text-align: center;
+    padding-top: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+
+  
+
 /* Cor de fundo do autocomplete INPUT E TEXTAREA */
 input:-webkit-autofill,textarea {
   filter: saturate(1) hue-rotate(200deg);
@@ -50,6 +104,7 @@ input:-webkit-autofill,textarea {
 
 .hero_area {
     position: relative;
+    top: 0px;
     min-height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -88,6 +143,10 @@ input:-webkit-autofill,textarea {
           background-position: center;
 
     }
+
+    .parallax{
+      transform: scale(1);
+    }
   }
 
   .bg_img_box{
@@ -107,7 +166,7 @@ input:-webkit-autofill,textarea {
   }
 
   nav img{
-    width: 100px;
+    width: 120px;
   }
 
 
@@ -147,7 +206,7 @@ input:-webkit-autofill,textarea {
 
 /* animação pulse com brilho */
 .pulse-brilho{
-  animation: pulse 1s infinite;
+  animation: pulse .8s infinite;
   margin: 0 auto;
   display: table;
   margin-top: 50px;
@@ -196,9 +255,12 @@ input:-webkit-autofill,textarea {
   background-repeat: no-repeat; /* não repetir a imagem caso a dimensão não esteja certa */
   background-position: center center; /* imagem será sempre mostrada a parti do centro */
   transform: scale();
-}
-.p1{
-background-image: url('../images/conversando_com_terapeuta.jpg');
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+  .p1{
+  background-image: url('../images/conversando_com_terapeuta.jpg');
 }
 .p2{
 background-image: url('imagens kl/layout_kl2.png');
@@ -254,14 +316,10 @@ background-image: url('imagens kl/layout_kl2.png');
 
 .btn-modal-trat:hover{
 
-
-  transform:scale(1.05);
-  transition: 0.7s;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transform:scale(1.04);
+  transition: 0.6s;
   filter: brightness(140%)
-
-}
-
-.h1-modal-trat:hover{
-
 
 }
