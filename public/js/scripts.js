@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 	//NAVBAR 
 	const navbar = document.querySelector('.navbar')
-	if(document.body.offsetTop < 50) {
+	if(document.body.offsetTop > 100) {
 		navbar.classList.add('reduzir');
 	}
 

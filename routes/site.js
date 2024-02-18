@@ -61,8 +61,10 @@ router.post("/contato", (req,res)=>{
             res.redirect('/contato')
         })
 
+})
 
-
+router.get("/privacidade", (req,res)=>{
+    res.render('privacidade')
 })
 
 router.get("/*", (req,res)=>{
