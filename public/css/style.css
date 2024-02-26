@@ -6,6 +6,7 @@ h3,
 h5,
 a,
 hr,
+label,
 .nav-link,
 .card-body h5{
  color: #61302B ;
@@ -13,7 +14,7 @@ hr,
  text-decoration: none;
 } 
 
-p, h4, button, span{
+p, h4, button, span, small{
     color: #A99382;
     font-family: 'Open Sans'; 
 }
@@ -23,10 +24,16 @@ p, h4, button, span{
 }
 
 /* Cor de fundo do autocomplete INPUT E TEXTAREA */
-input:-webkit-autofill,textarea,input:focus {
+input:-webkit-autofill,
+textarea,
+input,
+input:focus,
+.form-switch .form-check-input:focus
+{
   filter: saturate(1) hue-rotate(200deg);
   -webkit-text-fill-color: #6c757d;
 }
+
 
 .btn-primary {
   --bs-btn-color: #fff;
@@ -88,11 +95,6 @@ nav.show{
   background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
   padding-top: 1rem
-}
-
-.navbar-collapse ul{
-  padding: 1.5rem;
-  font-size: 1.2rem;
 }
   
 nav .collapsing{
@@ -192,7 +194,7 @@ nav.show .navbar-toggler-icon::after{
 }
 
 .bg_img_box{
-  background-image: url("../images/fundo_hero__2.png");
+  background-image: url("../images/fundo_hero__2.webp");
   background-position: bottom;
   background-size: cover;    
 }
@@ -218,7 +220,7 @@ nav img{
 
 @media (width <= 575px) {
   .bg_img_box{
-    background-image: url("../images/fundo_hero__2_mobile.png")!important;
+    background-image: url("../images/fundo_hero__2_mobile.webp")!important;
     background-size: cover;
     background-position: center;
   }
@@ -226,6 +228,12 @@ nav img{
   .parallax{
     transform: scale(1);
   }
+
+  .navbar-collapse ul{
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
 }
 
 /*  END HOME  */

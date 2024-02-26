@@ -20,7 +20,7 @@ var formContato = { info:null, err:null }
 router.get("/contato", (req,res)=>{
     res.render('contato', { formContato })
     if(formContato.info || formContato.err){
-        formContato = { info:null, err:null}
+        formContato = { info:null, err:null }
     }
 })
 
@@ -35,7 +35,7 @@ router.post("/contato", (req,res)=>{
     const transporter = nodemailer.createTransport({ // Configura os parâmetros de conexão com servidor.
         host: process.env.HOST_EMAIL,
         port: process.env.HOST_PORT,
-        secure: false,
+        secure: true,
         auth: {
           user: process.env.HOST_USER,
           pass: process.env.HOST_PASS
@@ -43,8 +43,8 @@ router.post("/contato", (req,res)=>{
       })
     
     const mailOptions = { // Define informações pertinentes ao E-mail que será enviado
-        from: 'contato@monicacostapsi.com.br',
-        to: 'contato@monicacostapsi.com.br',
+        from: 'contato@psimonicacosta.com.br',
+        to: 'contato@psimonicacosta.com.br',
         replyTo: email,
         subject: 'Contato do Site',
         text: emailMessage
