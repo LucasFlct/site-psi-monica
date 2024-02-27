@@ -14,10 +14,20 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+
+//redirecionamento para www e https
+app.use(function(req, res, next) {
+    if (req.secure){
+        return next();
+    }
+    res.redirect("https://" + req.headers.host + req.url);
+});
+
 //rotas do site
 app.use("/", site)
 
 //servidor rodando
 app.listen(PORT, ()=>{
+    
     console.log("Server Running on Port:", PORT)
 })
