@@ -1,6 +1,7 @@
 const express = require("express")
 const nodemailer = require('nodemailer')
 require('dotenv').config()
+const CaptacaoController = require('../controllers/CaptacaoController')
 const router = express.Router()
 
 router.get("/", (req,res)=>{
@@ -10,6 +11,8 @@ router.get("/", (req,res)=>{
 router.get("/sobre", (req,res)=>{
     res.render('sobre')
 })
+
+router.post("/captacao", CaptacaoController.accessSheet)
 
 router.get("/tratamentos", (req,res)=>{
     res.render('tratamentos')
@@ -49,17 +52,20 @@ router.post("/contato", (req,res)=>{
         subject: 'Contato do Site',
         text: emailMessage
       }
-      
-    transporter.sendMail(mailOptions, (err, info) => { // Função que, efetivamente, envia o email.
-        if (err) {
-            console.log(err)
-            formContato = { info:null, err: "Erro ao enviar mensagem" }
-        } else {
-            console.log(info)
-            formContato = { info:"Mensagem enviada com sucesso", err: null }
-        }
+    
+      setTimeout(()=>{
+
+          transporter.sendMail(mailOptions, (err, info) => { // Função que, efetivamente, envia o email.
+            if (err) {
+                console.log(err)
+                formContato = { info:null, err: "Erro ao enviar mensagem" }
+            } else {
+                console.log(info)
+                formContato = { info:"Mensagem enviada com sucesso", err: null }
+            }
             res.redirect('/contato')
         })
+    },3000)
 
 })
 

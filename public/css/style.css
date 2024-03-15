@@ -10,13 +10,13 @@ label,
 .nav-link,
 .card-body h5{
  color: #61302B ;
- font-family: 'Martel Sans';
+ font-family: 'Martel Sans', sans-serif;
  text-decoration: none;
 } 
 
 p, h4, button, span, small{
-    color: #A99382;
-    font-family: 'Open Sans'; 
+    color: #928071;
+    font-family: 'Open Sans', sans-serif; 
 }
 
 .navbar-nav .nav-link.active{
@@ -87,6 +87,7 @@ input:focus,
 }
 
 .navbar img{
+  width: 120px;
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
@@ -157,7 +158,7 @@ nav.show .navbar-toggler-icon::after{
 /****** HOME ******/
 #main{
   overflow-x: hidden;
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 
 .hero_area {
@@ -193,12 +194,6 @@ nav.show .navbar-toggler-icon::after{
   background-size: cover;
 }
 
-.bg_img_box{
-  background-image: url("../images/fundo_hero__2.webp");
-  background-position: bottom;
-  background-size: cover;    
-}
-
 .hero_area .hero_bg_box .bg_img_box {
   min-width: 100%;
   min-height: 100%;
@@ -208,10 +203,6 @@ nav.show .navbar-toggler-icon::after{
   min-width: 100%;
 }
 
-nav img{
-  width: 120px;
-}
-
 .card{
     border: none;
     pointer-events: none;
@@ -219,14 +210,9 @@ nav img{
 }
 
 @media (width <= 575px) {
-  .bg_img_box{
-    background-image: url("../images/fundo_hero__2_mobile.webp")!important;
-    background-size: cover;
-    background-position: center;
-  }
 
-  .parallax{
-    transform: scale(1);
+  .p1{
+    height: 15rem;
   }
 
   .navbar-collapse ul{
@@ -237,10 +223,6 @@ nav img{
 }
 
 /*  END HOME  */
-
-
-
-
 
 /***** ANIMAÇÕES *****/
 
@@ -265,7 +247,6 @@ nav img{
 	transform: translate3d(0,0,0);
 }
 
-
 /* movimentos no modal */
 .btn-modal-trat{
   transition: 0.6s;
@@ -288,7 +269,6 @@ nav img{
   transform: translate3d(0ch, -0.1in, 2em);  
 }
 
-
 /* animação pulse */
 .pulse-brilho{
   animation: pulse-brilho .7s infinite;
@@ -308,7 +288,7 @@ nav img{
 
 /* Botão do WhatsApp */
 .rise-shake{
-  animation: jump-shaking 7s infinite;
+  animation: jump-shaking 6s infinite;
 }
 
 @keyframes jump-shaking {
@@ -325,28 +305,39 @@ nav img{
   100% { transform: translateY(0) rotate(0) }
 }
 
+.sair{
+  animation: sair .3s;
+}
+.entrar{
+  animation: entrar .3s;
+}
 
 
+@keyframes entrar {
+  from{transform: translate3d(50px,0,0); opacity: 0;}
+  to{transform: translate3d(0,0,0); opacity: 1;}
+}
+@keyframes sair {
+  from{transform: translate3d(0,0,0); opacity: 1;}
+  to{transform: translate3d(50px,0,0); opacity: 0;}
+}
 
 /*****   PARALLAX   *****/
 .parallax{
-  background-attachment: fixed; /* anexo da imagem - não deixa a imagem rolar junto com a section */
+  background-attachment:local; /* anexo da imagem - não deixa a imagem rolar junto com a section */
   background-size: cover; /* cobre toda a area da section */
-  background-repeat: no-repeat; /* não repetir a imagem caso a dimensão não esteja certa */
-  background-position: center center; /* imagem será sempre mostrada a parti do centro */
+  background-repeat: no-repeat; /*não repetir a imagem caso a dimensão não esteja certa*/
+  background-position: bottom center; /* imagem será sempre mostrada a parti do centro */
   transform: scale();
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; */
 }
 
 .p1{
-  background-image: url('../images/conversa-com-terapeuta.avif');
+  background-image: url('../images/conversa-com-terapeuta.webp');
+  height: 30rem;
 }
-
-
-
-
 
 /*****    BOTÃO DOURADO   *****/
 
@@ -399,11 +390,6 @@ nav img{
   background-position: right;
   transition-duration: 1s;
 }
-
-
-
-
-
 
 /* COOKIES */
 .cookies-content {
