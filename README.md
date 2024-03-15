@@ -57,5 +57,5 @@ Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE pa
 
 ---
 
-Espero que isso ajude! Lembre-se de personalizar o README com informações específicas do seu projeto. Se tiver mais alguma dúvida, estou à disposição! 🚀
+Se tiver mais alguma dúvida, estou à disposição! 🚀
 
