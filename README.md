@@ -15,8 +15,7 @@ Este é um projeto de website desenvolvido para uma psicóloga. Ele utiliza tecn
 
 1. **Clone o Repositório**:
     ```
-    git clone https://github.com/seu-usuario/psicologa-website.git
-    cd psicologa-website
+    git clone https://github.com/LucasFlct/site-psi-monica.git
     ```
 
 2. **Instale as Dependências**:
